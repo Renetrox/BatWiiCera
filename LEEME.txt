@@ -1,0 +1,46 @@
+BATWIICERA PARA ES-X — MEDIA v3 (experimental)
+14 noviembre 2026
+
+Base: XML funcional 16:9 y 4:3 del pulido v2; se aplican SOLO cambios de tema.
+
+SOLUCIONA:
+1. "detailed" no reproduce videos en ES-X; el nuevo layout "video" tiene su
+   propio <video name="md_video">. Ahora ES-X puede elegir video en AUTOMATIC
+   si existe por lo menos un video de juego en ese sistema.
+2. "md_image" estaba oculto globalmente. Ahora "detailed" y "video" muestran
+   las caratulas/capturas que ES-X conoce en gamelist.xml, detras del video.
+3. Si el juego no tiene ningun recurso, se muestra no-preview.png en el panel.
+4. El valor "default" de md_video apuntaba a un PNG, pero el motor lo trata
+   como archivo de video por defecto. Se retira para evitar ese comportamiento.
+5. Se aumenta levemente el margen interno de los logos del Grid de sistemas.
+   Los logos existentes y los generos/colecciones se respetan: si hay imagen,
+   ES-X no debe superponer texto adicional; si no hay arte, se usa nombre.
+
+COMO INSTALAR:
+Descomprime el ZIP, abre una terminal dentro de BatWiiCera_ESX_Media_v3:
+  bash aplicar-media-v3.sh 16-9
+Para pantalla 4:3 o 800x600:
+  bash aplicar-media-v3.sh 4-3
+
+El instalador solo modifica ~/.emulationstation/themes/BatWiiCera/theme.xml,
+con copia de seguridad 'theme.xml.antes-media-v3-FECHA'. Requiere la carpeta
+_inc del tema original ya instalada. No modifica main ni el codigo fuente.
+
+PARA PROBAR:
+- Preferencia de lista de juegos: AUTOMATIC (sistema con videos -> VideoView),
+  o VIDEO (para forzar vista video en las pruebas).
+- Prueba varios juegos: uno con <video>, otro con <image> o <thumbnail>, y uno
+  sin multimedia. Comprueba que el area superior derecha tenga imagen/video.
+- Los archivos de medios deben existir; el tema no los descarga ni los crea.
+- El nombre del sistema bajo el reloj es un rotulo independiente de la imagen
+  dentro de su tarjeta. En Adventure, el texto inferior no es una segunda
+  etiqueta superpuesta sobre el logo.
+
+CREDITOS Y LICENCIA:
+BatWiiCera v0.1.6 por Dan Lee (yiddifliddo), CC BY-NC-SA 4.0.
+Logos Carbon Rookervik/Nils Bonenberger/Fabrice Caruso.
+Fallbacks Art Book Next Anthony Caccese. Fuentes Nunito OFL/Varela Apache 2.
+Mantener los creditos y licencia original al redistribuir la obra derivada.
+
+NOTA: Validacion automatica XML y del instalador realizada sin ES-X en vivo;
+prueba visual en PC y Orange Pi pendiente.

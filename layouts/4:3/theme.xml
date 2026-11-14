@@ -1,0 +1,427 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<theme>
+  <!-- BatWiiCera v0.1.6 by Dan Lee (yiddifliddo). ES-X experimental adaptation. Original license: CC BY-NC-SA 4.0; retain LICENSE. Credits: Carbon logos by Rookervik/Nils Bonenberger/Fabrice Caruso; Art Book Next by Anthony Caccese; minimal theme work by lilbud/Fabrice Caruso; music structure by pajarorrojo. Fonts Varela Round (Apache 2.0), Nunito (SIL OFL 1.1). -->
+  <formatVersion>7</formatVersion>
+  <variables>
+    <bgImage>./_inc/images/bg-stripes.png</bgImage>
+    <textPrimary>4A4A4AFF</textPrimary>
+    <textSecondary>7A7A7AFF</textSecondary>
+    <textMuted>9A9A9AFF</textMuted>
+    <textOnAccent>FFFFFFFF</textOnAccent>
+    <accent>4FB8F4FF</accent>
+    <accentLight>7CCDF8FF</accentLight>
+    <accentDark>2E95D8FF</accentDark>
+    <folderColor>3F8FCBFF</folderColor>
+    <separator>DEDEDEFF</separator>
+    <panelTint>FFFFFFFF</panelTint>
+    <tileTint>FFFFFFFF</tileTint>
+    <fontRound>./_inc/fonts/VarelaRound-Regular.ttf</fontRound>
+    <fontRegular>./_inc/fonts/Nunito-Regular.ttf</fontRegular>
+    <fontBold>./_inc/fonts/Nunito-Bold.ttf</fontBold>
+    <logoPath>./_inc/systems/logos/${system.theme}.svg</logoPath>
+    <logoPathPng>./_inc/systems/logos/${system.theme}.png</logoPathPng>
+  </variables>
+  <view name="screen">
+    <text name="clock">
+      <pos>0.5 0.775</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.36 0.07</size>
+      <fontPath>${fontRound}</fontPath>
+      <fontSize>0.056</fontSize>
+      <color>${textSecondary}</color>
+      <alignment>center</alignment>
+      <verticalAlignment>center</verticalAlignment>
+      <zIndex>60</zIndex>
+    </text>
+  </view>
+  <view name="system, basic, detailed, video, grid">
+    <image name="background" extra="true">
+      <pos>0 0</pos>
+      <size>1 1</size>
+      <origin>0 0</origin>
+      <path>${bgImage}</path>
+      <tile>true</tile>
+      <zIndex>0</zIndex>
+    </image>
+    <image name="bottom-bar" extra="true">
+      <pos>0 0.722</pos>
+      <size>1 0.278</size>
+      <origin>0 0</origin>
+      <path>./_inc/images/bottom-bar.svg</path>
+      <zIndex>20</zIndex>
+    </image>
+    <helpsystem name="help">
+      <pos>0.018 0.967</pos>
+      <origin>0 0</origin>
+      <textColor>${textSecondary}</textColor>
+      <iconColor>${accent}</iconColor>
+      <fontPath>${fontRegular}</fontPath>
+      <fontSize>0.017</fontSize>
+    </helpsystem>
+  </view>
+  <view name="system">
+    <image name="home-button" extra="true">
+      <pos>0.075 0.865</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.075 0.135</maxSize>
+      <path>./_inc/images/btn-round.svg</path>
+      <zIndex>25</zIndex>
+    </image>
+    <image name="mail-button" extra="true">
+      <pos>0.925 0.865</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.075 0.135</maxSize>
+      <path>./_inc/images/btn-mail.svg</path>
+      <zIndex>25</zIndex>
+    </image>
+    <image name="logo">
+      <path>./_inc/systems/logos/${system.theme}.svg</path>
+      <default>./_inc/systems/logos/${system.theme}.png</default>
+    </image>
+    <text name="logoText">
+      <fontPath>${fontBold}</fontPath>
+      <color>${textPrimary}</color>
+      <forceUppercase>false</forceUppercase>
+    </text>
+    <imagegrid name="imagegrid">
+      <pos>0.07 0.06</pos>
+      <size>0.86 0.62</size>
+      <autoLayout>3 3</autoLayout>
+      <autoLayoutSelectedZoom>1.05</autoLayoutSelectedZoom>
+      <animate>true</animate>
+      <margin>0.02 0.03</margin>
+      <padding>0.015 0.015 0.015 0.015</padding>
+      <scrollDirection>vertical</scrollDirection>
+      <centerSelection>false</centerSelection>
+      <scrollLoop>false</scrollLoop>
+      <gameImage>./_inc/images/disc.svg</gameImage>
+      <folderImage>./_inc/images/disc.svg</folderImage>
+      <zIndex>10</zIndex>
+    </imagegrid>
+    <gridtile name="default">
+      <backgroundImage>./_inc/images/tile.png</backgroundImage>
+      <backgroundCornerSize>28 28</backgroundCornerSize>
+      <backgroundColor>FFFFFFFF</backgroundColor>
+      <imageColor>FFFFFFFF</imageColor>
+      <padding>0.022 0.036</padding>
+    </gridtile>
+    <gridtile name="selected">
+      <backgroundImage>./_inc/images/tile-selected.png</backgroundImage>
+      <backgroundCornerSize>30 30</backgroundCornerSize>
+      <backgroundColor>FFFFFFFF</backgroundColor>
+      <imageColor>FFFFFFFF</imageColor>
+      <padding>0.022 0.036</padding>
+    </gridtile>
+    <text name="gridtile">
+      <visible>false</visible>
+      <size>0 0</size>
+    </text>
+    <text name="system-name" extra="true">
+      <pos>0.5 0.865</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.54 0.052</size>
+      <text>${system.fullName}</text>
+      <fontPath>${fontBold}</fontPath>
+      <fontSize>0.036</fontSize>
+      <color>${textPrimary}</color>
+      <alignment>center</alignment>
+      <verticalAlignment>center</verticalAlignment>
+      <zIndex>30</zIndex>
+    </text>
+    <text name="systemInfo">
+      <pos>0.5 0.92</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.56 0.038</size>
+      <fontPath>${fontRegular}</fontPath>
+      <fontSize>0.020</fontSize>
+      <color>${textMuted}</color>
+      <backgroundColor>00000000</backgroundColor>
+      <alignment>center</alignment>
+      <zIndex>30</zIndex>
+    </text>
+  </view>
+  <view name="basic, detailed, video, grid">
+    <image name="home-button" extra="true">
+      <pos>0.075 0.865</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.075 0.135</maxSize>
+      <path>./_inc/images/btn-round.svg</path>
+      <zIndex>25</zIndex>
+    </image>
+    <image name="mail-button" extra="true">
+      <pos>0.925 0.865</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.075 0.135</maxSize>
+      <path>./_inc/images/btn-mail.svg</path>
+      <zIndex>25</zIndex>
+    </image>
+  </view>
+  <view name="basic, detailed, video">
+    <ninepatch name="list-panel" extra="true">
+      <pos>0.04 0.06</pos>
+      <size>0.36 0.64</size>
+      <path>./_inc/images/panel.png</path>
+      <zIndex>5</zIndex>
+    </ninepatch>
+    <image name="logo">
+      <pos>0.22 0.115</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.26 0.08</maxSize>
+      <path>./_inc/systems/logos/${system.theme}.svg</path>
+      <default>./_inc/systems/logos/${system.theme}.png</default>
+      <zIndex>8</zIndex>
+    </image>
+    <text name="logoText">
+      <pos>0.22 0.115</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.30 0.08</size>
+      <text>${system.fullName}</text>
+      <fontPath>${fontBold}</fontPath>
+      <fontSize>0.045</fontSize>
+      <color>${textPrimary}</color>
+      <alignment>center</alignment>
+      <verticalAlignment>center</verticalAlignment>
+      <forceUppercase>false</forceUppercase>
+      <zIndex>8</zIndex>
+    </text>
+    <textlist name="gamelist">
+      <pos>0.055 0.17</pos>
+      <size>0.33 0.51</size>
+      <origin>0 0</origin>
+      <fontPath>${fontRegular}</fontPath>
+      <fontSize>0.03</fontSize>
+      <alignment>left</alignment>
+      <horizontalMargin>0.015</horizontalMargin>
+      <lineSpacing>1.7</lineSpacing>
+      <primaryColor>${textPrimary}</primaryColor>
+      <secondaryColor>${folderColor}</secondaryColor>
+      <selectedColor>${textOnAccent}</selectedColor>
+      <selectorColor>${accentLight}</selectorColor>
+      <selectorColorEnd>${accent}</selectorColorEnd>
+      <selectorGradientType>vertical</selectorGradientType>
+      <zIndex>9</zIndex>
+    </textlist>
+    <text name="game-count" extra="true">
+      <pos>0.5 0.92</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.20 0.035</size>
+      <text>${system.fullName}</text>
+      <fontPath>${fontRegular}</fontPath>
+      <fontSize>0.022</fontSize>
+      <color>${textMuted}</color>
+      <alignment>center</alignment>
+      <zIndex>30</zIndex>
+    </text>
+    <text name="md_lbl_rating, md_lbl_releasedate, md_lbl_developer, md_lbl_publisher, md_lbl_genre, md_lbl_players, md_lbl_lastplayed, md_lbl_playcount, md_lbl_gametime">
+      <visible>false</visible>
+    </text>
+    <text name="md_developer, md_publisher, md_playcount, md_gametime">
+      <visible>false</visible>
+    </text>
+    <datetime name="md_lastplayed">
+      <visible>false</visible>
+    </datetime>
+    <image name="md_image, md_thumbnail">
+      <visible>false</visible>
+    </image>
+  </view>
+  <view name="basic">
+    <ninepatch name="screen-panel" extra="true">
+      <pos>0.43 0.06</pos>
+      <size>0.53 0.64</size>
+      <path>./_inc/images/panel.png</path>
+      <zIndex>5</zIndex>
+    </ninepatch>
+    </view>
+  <view name="detailed, video">
+    <ninepatch name="screen-panel" extra="true">
+      <pos>0.43 0.06</pos>
+      <size>0.53 0.44</size>
+      <path>./_inc/images/panel.png</path>
+      <zIndex>5</zIndex>
+    </ninepatch>
+    <!-- Imagen dinámica para detailed; en video se usa el snapshot integrado. -->
+    <image name="md_image">
+      <pos>0.695 0.28</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.50 0.40</maxSize>
+      <visible>true</visible>
+      <zIndex>12</zIndex>
+      <default>./_inc/images/no-preview.png</default>
+    </image>
+    <ninepatch name="info-panel" extra="true">
+      <pos>0.43 0.52</pos>
+      <size>0.53 0.18</size>
+      <path>./_inc/images/panel.png</path>
+      <zIndex>5</zIndex>
+    </ninepatch>
+    <image name="md_marquee">
+      <pos>0.445 0.595</pos>
+      <origin>0 0.5</origin>
+      <maxSize>0.14 0.11</maxSize>
+      <zIndex>12</zIndex>
+    </image>
+    <rating name="md_rating">
+      <pos>0.445 0.665</pos>
+      <origin>0 0.5</origin>
+      <size>0.14 0.025</size>
+      <filledPath>./_inc/images/star-filled.svg</filledPath>
+      <unfilledPath>./_inc/images/star-unfilled.svg</unfilledPath>
+      <color>FFFFFFFF</color>
+      <zIndex>12</zIndex>
+    </rating>
+    <text name="md_name">
+      <pos>0.60 0.535</pos>
+      <size>0.31 0.04</size>
+      <fontPath>${fontBold}</fontPath>
+      <fontSize>0.032</fontSize>
+      <color>${textPrimary}</color>
+      <alignment>left</alignment>
+      <zIndex>12</zIndex>
+    </text>
+    <datetime name="md_releasedate">
+      <pos>0.60 0.578</pos>
+      <size>0.06 0.03</size>
+      <format>%Y</format>
+      <fontPath>${fontRegular}</fontPath>
+      <fontSize>0.022</fontSize>
+      <color>${accentDark}</color>
+      <alignment>left</alignment>
+      <zIndex>12</zIndex>
+    </datetime>
+    <text name="md_players">
+      <pos>0.66 0.578</pos>
+      <size>0.08 0.03</size>
+      <fontPath>${fontRegular}</fontPath>
+      <fontSize>0.022</fontSize>
+      <color>${accentDark}</color>
+      <alignment>left</alignment>
+      <zIndex>12</zIndex>
+    </text>
+    <text name="md_genre">
+      <pos>0.74 0.578</pos>
+      <size>0.205 0.03</size>
+      <fontPath>${fontRegular}</fontPath>
+      <fontSize>0.022</fontSize>
+      <color>${accentDark}</color>
+      <alignment>left</alignment>
+      <zIndex>12</zIndex>
+    </text>
+    <text name="md_description">
+      <pos>0.60 0.612</pos>
+      <size>0.305 0.08</size>
+      <fontPath>${fontRegular}</fontPath>
+      <fontSize>0.02</fontSize>
+      <color>${textSecondary}</color>
+      <alignment>left</alignment>
+      <lineSpacing>1.3</lineSpacing>
+      <autoScrollDelay>3000</autoScrollDelay>
+      <zIndex>12</zIndex>
+    </text>
+  </view>
+  <!-- ES-X: VideoGameListView only reads md_video in the video view. -->
+  <view name="video">
+    <image name="md_image">
+      <visible>false</visible>
+    </image>
+    <video name="md_video">
+      <pos>0.695 0.28</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.50 0.40</maxSize>
+      <delay>0.3</delay>
+      <showSnapshotNoVideo>true</showSnapshotNoVideo>
+      <showSnapshotDelay>true</showSnapshotDelay>
+      <videoCornerRadius>0.04</videoCornerRadius>
+      <imageCornerRadius>0.04</imageCornerRadius>
+      <zIndex>14</zIndex>
+      <defaultSnapshot>./_inc/images/no-preview.png</defaultSnapshot>
+    </video>
+  </view>
+  <view name="grid">
+    <imagegrid name="gamegrid">
+      <pos>0.05 0.06</pos>
+      <size>0.90 0.62</size>
+      <autoLayout>4 3</autoLayout>
+      <autoLayoutSelectedZoom>1.05</autoLayoutSelectedZoom>
+      <animate>true</animate>
+      <margin>0.012 0.028</margin>
+      <padding>0.015 0.015 0.015 0.015</padding>
+      <scrollDirection>vertical</scrollDirection>
+      <centerSelection>false</centerSelection>
+      <scrollLoop>false</scrollLoop>
+      <imageSource>image</imageSource>
+      <gameImage>./_inc/images/no-preview.png</gameImage>
+      <folderImage>./_inc/images/disc.svg</folderImage>
+      <zIndex>10</zIndex>
+    </imagegrid>
+    <gridtile name="default">
+      <backgroundImage>./_inc/images/tile.png</backgroundImage>
+      <backgroundCornerSize>28 28</backgroundCornerSize>
+      <backgroundColor>FFFFFFFF</backgroundColor>
+      <imageColor>FFFFFFFF</imageColor>
+      <padding>0.0052 0.0093</padding>
+    </gridtile>
+    <gridtile name="selected">
+      <backgroundImage>./_inc/images/tile-selected.png</backgroundImage>
+      <backgroundCornerSize>30 30</backgroundCornerSize>
+      <backgroundColor>FFFFFFFF</backgroundColor>
+      <imageColor>FFFFFFFF</imageColor>
+      <padding>0.0063 0.0111</padding>
+    </gridtile>
+    <text name="gridtile">
+      <pos>0 0.76</pos>
+      <size>1 0.20</size>
+      <fontPath>${fontBold}</fontPath>
+      <fontSize>0.02</fontSize>
+      <color>${textPrimary}</color>
+      <backgroundColor>FFFFFFCC</backgroundColor>
+      <alignment>center</alignment>
+      <verticalAlignment>center</verticalAlignment>
+    </text>
+    <image name="logo">
+      <pos>0.5 0.735</pos>
+      <origin>0.5 1</origin>
+      <maxSize>0.20 0.05</maxSize>
+      <path>./_inc/systems/logos/${system.theme}.svg</path>
+      <default>./_inc/systems/logos/${system.theme}.png</default>
+      <visible>false</visible>
+    </image>
+    <text name="md_name">
+      <pos>0.5 0.865</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.46 0.06</size>
+      <fontPath>${fontBold}</fontPath>
+      <fontSize>0.04</fontSize>
+      <color>${textPrimary}</color>
+      <alignment>center</alignment>
+      <verticalAlignment>center</verticalAlignment>
+      <zIndex>30</zIndex>
+    </text>
+    <text name="game-system" extra="true">
+      <pos>0.5 0.92</pos>
+      <origin>0.5 0.5</origin>
+      <size>0.46 0.035</size>
+      <text>${system.fullName}</text>
+      <fontPath>${fontRegular}</fontPath>
+      <fontSize>0.022</fontSize>
+      <color>${textMuted}</color>
+      <alignment>center</alignment>
+      <zIndex>30</zIndex>
+    </text>
+    <text name="md_lbl_rating, md_lbl_releasedate, md_lbl_developer, md_lbl_publisher, md_lbl_genre, md_lbl_players, md_lbl_lastplayed, md_lbl_playcount, md_lbl_gametime, md_developer, md_publisher, md_genre, md_players, md_playcount, md_gametime, md_description">
+      <visible>false</visible>
+    </text>
+    <datetime name="md_releasedate, md_lastplayed">
+      <visible>false</visible>
+    </datetime>
+    <rating name="md_rating">
+      <visible>false</visible>
+    </rating>
+    <image name="md_image, md_marquee, md_thumbnail">
+      <visible>false</visible>
+    </image>
+    <video name="md_video">
+      <visible>false</visible>
+    </video>
+  </view>
+</theme>
