@@ -5,6 +5,7 @@
 [![ES-X](https://img.shields.io/badge/Frontend-EmulationStation--X-2088D7)](https://github.com/Renetrox/EmulationStation-X)
 [![Layouts](https://img.shields.io/badge/Layouts-16%3A9%20%7C%204%3A3-6C757D)](./layouts)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey)](./LICENSE)
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/4c0ff1af-1d8a-43da-aa73-ea173d270951" />
 
 **Original theme:** BatWiiCera v0.1.6 by **Dan Lee (yiddifliddo)**.  
 **ES-X adaptation:** **Renetrox**.  
