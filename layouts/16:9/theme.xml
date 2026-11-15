@@ -33,6 +33,17 @@
       <verticalAlignment>center</verticalAlignment>
       <zIndex>60</zIndex>
     </text>
+      <!-- Dynamic ES-X network/Bluetooth indicators; keep the engine's native icons and connectivity logic. -->
+    <image name="network">
+      <pos>0.978 0.026</pos>
+      <origin>1 0</origin>
+      <size>0.030 0.030</size>
+    </image>
+    <image name="bluetooth">
+      <pos>0.940 0.026</pos>
+      <origin>1 0</origin>
+      <size>0.030 0.030</size>
+    </image>
   </view>
   <view name="system, basic, detailed, video, grid">
     <image name="background" extra="true">
@@ -60,6 +71,21 @@
     </helpsystem>
   </view>
   <view name="system">
+        <!-- Original BatWiiCera decorative arrows (not interactive). -->
+    <image name="arrow-left" extra="true">
+      <pos>0.028 0.375</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.025 0.08</maxSize>
+      <path>./_inc/images/arrow-left.svg</path>
+      <zIndex>15</zIndex>
+    </image>
+    <image name="arrow-right" extra="true">
+      <pos>0.972 0.375</pos>
+      <origin>0.5 0.5</origin>
+      <maxSize>0.025 0.08</maxSize>
+      <path>./_inc/images/arrow-right.svg</path>
+      <zIndex>15</zIndex>
+    </image>
     <image name="home-button" extra="true">
       <pos>0.075 0.865</pos>
       <origin>0.5 0.5</origin>
