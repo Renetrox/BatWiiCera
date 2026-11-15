@@ -24,9 +24,11 @@ This is a community adaptation of the original BatWiiCera theme, not an official
 | **Video preview** | Thumbnail displayed while the video starts, then video playback via `md_video` |
 | **Game Grid** | Optional grid view with artwork and selection highlighting |
 | **Bottom bar** | Clock, system information and themed help prompts |
+| **Status indicators** | ES-X network and Bluetooth icons, displayed only when the corresponding status/settings allow it; positioned at the top-right by the theme |
+| **Side arrows** | Original BatWiiCera left/right SVG decorations in the system view; **not** clickable controls |
 | **Aspect ratios** | Widescreen **16:9** and classic **4:3**, selectable in Theme Options |
 
-The round Home and Mail icons are **visual theme artwork** in this ES-X port; they are not advertised here as clickable actions. Batocera-only extras from the original README (such as Netplay navigation, pointer-hand interaction and save-state / RetroAchievements buttons) have **not** been ported as interactive features.
+The round Home and Mail icons and the two side arrows are **visual theme artwork** in this ES-X port; they are not advertised here as clickable actions. Bluetooth and network indicators are different: ES-X renders them conditionally from its own status checks, using the position specified by the theme. Batocera-only extras from the original README (such as Netplay navigation, pointer-hand interaction and save-state / RetroAchievements buttons) have **not** been ported as interactive features.
 
 ## Requirements
 
