@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 BatWiiCera - colour set: Sky (pale blue stripes)
-Author: Dan Lee
+Author: yiddifliddo
 -->
 <theme>
   <formatVersion>7</formatVersion>
@@ -17,5 +17,18 @@ Author: Dan Lee
     <folderColor>2178B5FF</folderColor>
     <separator>CFDFEAFF</separator>
     <panelTint>FFFFFFFF</panelTint>
+    <!-- artwork and tints that differ in dark mode -->
+    <barImage>./_inc/images/bottom-bar.svg</barImage>
+    <homeButtonImage>./_inc/images/btn-round.svg</homeButtonImage>
+    <mailButtonImage>./_inc/images/btn-mail.svg</mailButtonImage>
+    <noPreviewImage>./_inc/images/no-preview.png</noPreviewImage>
+    <tileTint>FFFFFFFF</tileTint>
+    <menuFrameImage>./_inc/images/menu-frame.png</menuFrameImage>
+    <menuGroupBg>F1F1F1FF</menuGroupBg>
+    <labelBg>FFFFFFCC</labelBg>
+    <labelBgSelected>FFFFFFE6</labelBgSelected>
+    <!-- ES-X theme variables: panel artwork and logo contrast. -->
+    <panelImage>./_inc/images/panel.png</panelImage>
+    <logoPlateVisible>false</logoPlateVisible>
   </variables>
 </theme>

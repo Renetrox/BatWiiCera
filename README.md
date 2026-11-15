@@ -27,6 +27,7 @@ This is a community adaptation of the original BatWiiCera theme, not an official
 | **Status indicators** | ES-X network and Bluetooth icons, displayed only when the corresponding status/settings allow it; positioned at the top-right by the theme |
 | **Side arrows** | Original BatWiiCera left/right SVG decorations in the system view; **not** clickable controls |
 | **Aspect ratios** | Widescreen **16:9** and classic **4:3**, selectable in Theme Options |
+| **Colour schemes** | Original **Classic Grey**, **Sky Blue** and **Dark Grey** palettes, selectable independently of aspect ratio |
 
 The round Home and Mail icons and the two side arrows are **visual theme artwork** in this ES-X port; they are not advertised here as clickable actions. Bluetooth and network indicators are different: ES-X renders them conditionally from its own status checks, using the position specified by the theme. Batocera-only extras from the original README (such as Netplay navigation, pointer-hand interaction and save-state / RetroAchievements buttons) have **not** been ported as interactive features.
 
@@ -86,6 +87,18 @@ cp "layouts/4:3/theme.xml" theme.xml
 ```
 
 For 16:9, copy `layouts/16:9/theme.xml` instead.
+
+## Colour scheme selection
+
+In **ES-X → UI Settings → Theme Options → COLOR SCHEME**, choose **Classic Grey**, **Sky Blue**, or **Dark Grey**. This selector is independent of the **16:9 / 4:3** layout selector, giving six combinations without duplicating the theme XML.
+
+- **Classic Grey:** original light-gray striped background.
+- **Sky Blue:** pale-blue striped background and coordinated accents.
+- **Dark Grey:** original dark striped background, dark bottom bar and buttons, dark panels and light-colored labels. Normal channel tiles remain light gray for legibility; the selected tile is white with a blue edge.
+
+The selected palette path is stored in `theme.ini` as `COLORSCHEME`, and both layout XML files load the matching `_inc/colors/*.xml` variables. Default: **Classic Grey**.
+
+> **Note:** The overall ES-X application menu dark mode is a separate frontend setting. ES-X's `ninepatch` XML does not support the Batocera color tint property, so dark panels in this port reuse the original `menu-frame-dark.png` artwork. Visual verification on other screen sizes remains useful.
 
 ## Media previews and fallback behavior
 
@@ -149,7 +162,7 @@ This project is a fan-made visual tribute. It is not affiliated with, sponsored 
 
 ## Resumen en español
 
-**BatWiiCera para ES-X** adapta la estética de los canales Wii a EmulationStation-X sin abandonar RetroPie. Incluye **Grid nativo de sistemas**, logos localizados, vista de juegos con imágenes y videos, respaldo multimedia `defaultSnapshot`, barra de ayuda y dos diseños: **16:9** y **4:3**.
+**BatWiiCera para ES-X** adapta la estética de los canales Wii a EmulationStation-X sin abandonar RetroPie. Incluye **Grid nativo de sistemas**, logos localizados, vista de juegos con imágenes y videos, respaldo multimedia `defaultSnapshot`, barra de ayuda dos diseños (**16:9** y **4:3**) y tres paletas (**Classic**, **Sky** y **Dark**).
 
 Instala el repositorio en `~/.emulationstation/themes/BatWiiCera`, selecciona el tema desde ES-X y cambia el formato en **Opciones del tema → Formato de pantalla**.
 

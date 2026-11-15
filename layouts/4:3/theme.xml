@@ -20,7 +20,10 @@
     <fontBold>./_inc/fonts/Nunito-Bold.ttf</fontBold>
     <logoPath>./_inc/systems/logos/${system.theme}.svg</logoPath>
     <logoPathPng>./_inc/systems/logos/${system.theme}.png</logoPathPng>
+    <colorScheme>./_inc/colors/classic.xml</colorScheme>
   </variables>
+  <!-- Independent palette from theme.ini -->
+  <include>${colorScheme}</include>
   <view name="screen">
     <text name="clock">
       <pos>0.5 0.775</pos>
@@ -58,7 +61,7 @@
       <pos>0 0.722</pos>
       <size>1 0.278</size>
       <origin>0 0</origin>
-      <path>./_inc/images/bottom-bar.svg</path>
+      <path>${barImage}</path>
       <zIndex>20</zIndex>
     </image>
     <helpsystem name="help">
@@ -90,14 +93,14 @@
       <pos>0.075 0.865</pos>
       <origin>0.5 0.5</origin>
       <maxSize>0.075 0.135</maxSize>
-      <path>./_inc/images/btn-round.svg</path>
+      <path>${homeButtonImage}</path>
       <zIndex>25</zIndex>
     </image>
     <image name="mail-button" extra="true">
       <pos>0.925 0.865</pos>
       <origin>0.5 0.5</origin>
       <maxSize>0.075 0.135</maxSize>
-      <path>./_inc/images/btn-mail.svg</path>
+      <path>${mailButtonImage}</path>
       <zIndex>25</zIndex>
     </image>
     <image name="logo">
@@ -127,7 +130,7 @@
     <gridtile name="default">
       <backgroundImage>./_inc/images/tile.png</backgroundImage>
       <backgroundCornerSize>28 28</backgroundCornerSize>
-      <backgroundColor>FFFFFFFF</backgroundColor>
+      <backgroundColor>${tileTint}</backgroundColor>
       <imageColor>FFFFFFFF</imageColor>
       <padding>0.022 0.036</padding>
     </gridtile>
@@ -171,14 +174,14 @@
       <pos>0.075 0.865</pos>
       <origin>0.5 0.5</origin>
       <maxSize>0.075 0.135</maxSize>
-      <path>./_inc/images/btn-round.svg</path>
+      <path>${homeButtonImage}</path>
       <zIndex>25</zIndex>
     </image>
     <image name="mail-button" extra="true">
       <pos>0.925 0.865</pos>
       <origin>0.5 0.5</origin>
       <maxSize>0.075 0.135</maxSize>
-      <path>./_inc/images/btn-mail.svg</path>
+      <path>${mailButtonImage}</path>
       <zIndex>25</zIndex>
     </image>
   </view>
@@ -186,8 +189,16 @@
     <ninepatch name="list-panel" extra="true">
       <pos>0.04 0.06</pos>
       <size>0.36 0.64</size>
-      <path>./_inc/images/panel.png</path>
+      <path>${panelImage}</path>
       <zIndex>5</zIndex>
+    </ninepatch>
+    <!-- Original dark-mode logo contrast plate (hidden for Classic / Sky). -->
+    <ninepatch name="logo-plate" extra="true">
+      <pos>0.065 0.07</pos>
+      <size>0.31 0.09</size>
+      <path>./_inc/images/panel.png</path>
+      <visible>${logoPlateVisible}</visible>
+      <zIndex>7</zIndex>
     </ninepatch>
     <image name="logo">
       <pos>0.22 0.115</pos>
@@ -255,7 +266,7 @@
     <ninepatch name="screen-panel" extra="true">
       <pos>0.43 0.06</pos>
       <size>0.53 0.64</size>
-      <path>./_inc/images/panel.png</path>
+      <path>${panelImage}</path>
       <zIndex>5</zIndex>
     </ninepatch>
     </view>
@@ -263,7 +274,7 @@
     <ninepatch name="screen-panel" extra="true">
       <pos>0.43 0.06</pos>
       <size>0.53 0.44</size>
-      <path>./_inc/images/panel.png</path>
+      <path>${panelImage}</path>
       <zIndex>5</zIndex>
     </ninepatch>
     <!-- Imagen dinámica para detailed; en video se usa el snapshot integrado. -->
@@ -273,12 +284,12 @@
       <maxSize>0.50 0.40</maxSize>
       <visible>true</visible>
       <zIndex>12</zIndex>
-      <default>./_inc/images/no-preview.png</default>
+      <default>${noPreviewImage}</default>
     </image>
     <ninepatch name="info-panel" extra="true">
       <pos>0.43 0.52</pos>
       <size>0.53 0.18</size>
-      <path>./_inc/images/panel.png</path>
+      <path>${panelImage}</path>
       <zIndex>5</zIndex>
     </ninepatch>
     <image name="md_marquee">
@@ -360,7 +371,7 @@
       <videoCornerRadius>0.04</videoCornerRadius>
       <imageCornerRadius>0.04</imageCornerRadius>
       <zIndex>14</zIndex>
-      <defaultSnapshot>./_inc/images/no-preview.png</defaultSnapshot>
+      <defaultSnapshot>${noPreviewImage}</defaultSnapshot>
     </video>
   </view>
   <view name="grid">
@@ -376,14 +387,14 @@
       <centerSelection>false</centerSelection>
       <scrollLoop>false</scrollLoop>
       <imageSource>image</imageSource>
-      <gameImage>./_inc/images/no-preview.png</gameImage>
+      <gameImage>${noPreviewImage}</gameImage>
       <folderImage>./_inc/images/disc.svg</folderImage>
       <zIndex>10</zIndex>
     </imagegrid>
     <gridtile name="default">
       <backgroundImage>./_inc/images/tile.png</backgroundImage>
       <backgroundCornerSize>28 28</backgroundCornerSize>
-      <backgroundColor>FFFFFFFF</backgroundColor>
+      <backgroundColor>${tileTint}</backgroundColor>
       <imageColor>FFFFFFFF</imageColor>
       <padding>0.0052 0.0093</padding>
     </gridtile>
@@ -400,7 +411,7 @@
       <fontPath>${fontBold}</fontPath>
       <fontSize>0.02</fontSize>
       <color>${textPrimary}</color>
-      <backgroundColor>FFFFFFCC</backgroundColor>
+      <backgroundColor>${labelBg}</backgroundColor>
       <alignment>center</alignment>
       <verticalAlignment>center</verticalAlignment>
     </text>
